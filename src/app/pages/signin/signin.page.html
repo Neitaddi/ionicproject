@@ -1,0 +1,62 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title class="title" size="large">Welcome Back</ion-title>
+    <p class="subtitle">Sign up to create your account</p>
+  </div>
+  <form [formGroup]="ionicForm" novalidate>
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input
+          placeholder="username"
+          formControlName="email"
+          class="input"
+          style="color: black"
+        />
+        <ion-icon name="person-outline" style="color: black"></ion-icon>
+      </ion-item>
+
+      <div style="padding-top: -26px; padding-bottom: 16px">
+        <ion-text class="errorInput" color="danger"
+          >Email is required.</ion-text
+        >
+        <ion-text class="errorInput" color="danger"
+          >Please provide valid email.</ion-text
+        >
+      </div>
+      <ion-item>
+        <ion-input
+          type="password"
+          placeholder="password"
+          formControlName="password"
+          class="input"
+        />
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item>
+      <div style="padding-top: -26px; padding-bottom: 16px">
+        <ion-text class="errorInput" color="danger"
+          >password is required.</ion-text
+        >
+        <ion-text class="errorInput" color="danger"
+          >Password Must contain at least one character</ion-text
+        >
+      </div>
+    </div>
+    <div class="signupLink">
+      <p class="p">
+        Already a memember?
+        <a [routerLink]="['/login']" style="color: #ffc33f">Signin now</a>
+      </p>
+    </div>
+
+    <ion-fab
+      *ngIf="ionicForm.valid"
+      vertical="bottom"
+      horizontal="end"
+      style="margin-bottom: 30px"
+    >
+      <ion-fab-button type="submit">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
+</ion-content>

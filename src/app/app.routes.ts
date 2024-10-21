@@ -7,7 +7,29 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'landing',
     pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./pages/login/login.page').then((m) => m.LoginPage),
+  },
+  {
+    path: 'signup',
+    loadComponent: () =>
+      import('./pages/signin/signin.page').then((m) => m.SigninPage),
+  },
+  {
+    path: 'resetpassword',
+    loadComponent: () =>
+      import('./pages/resetpassword/resetpassword.page').then(
+        (m) => m.ResetpasswordPage
+      ),
+  },
+  {
+    path: 'landing',
+    loadComponent: () =>
+      import('./pages/landing/landing.page').then((m) => m.LandingPage),
   },
 ];
